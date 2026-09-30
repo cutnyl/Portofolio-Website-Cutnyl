@@ -1,0 +1,272 @@
+---
+const experiences = [
+  {
+    title: "Regional President of HIMTI 2026/2027",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "leadership",
+    period: "Mar 2026 - Present",
+    achievements: [
+      "Lead regional operations, strategic initiatives, and student engagement across academic and professional.",
+      "Grew cohort registration by 50%+ through targeted engagement programs.",
+      "Oversee cross-region collaboration spanning 6 regions and 500+ participants and managed regional organizational operations, overseeing cross-functional divisions."
+    ]
+  },
+  {
+    title: "Vice Chairman of ICPC (International Collegiate Programming Contest) 2026 ",
+    organization: "BINUS University",
+    category: "leadership",
+    period: "Sept 2026 - Present",
+    achievements: [
+      "Coordinated 100+ committee members and 150+ participants for the international ICPC event, collaborating closely with faculty members.",
+      "Managed volunteer operations, including task delegation, scheduling, and on-site coordination."
+    ]
+  },
+  {
+    title: "Chairman of Workshop HIMTI Bekasi 2025",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "leadership",
+    period: "Aug 2025 - Oct 2026",
+    achievements: [
+      "Successfully partnership with CTI Group (the largest IT distributor company in Indonesia) to align cloud knowledge and secure industry-expert speakers.",
+      "Prepared proposals, budgets, reports, and documentation to capture activities and outcome."
+    ]
+  },
+  {
+    title: "Executive Secretary of TECHFEST (Technology Festival) 2025",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "leadership",
+    period: "Mar 2025 - Jun 2026",
+    achievements: [
+      "Managed all administrative workflows, official correspondence, and participant databases for a national-scale competition.",
+      "Managed 54 committee members for a month-long event spanning six regions and Successfully secured the participation of over 400 students across Indonesia."
+    ]
+  },
+  {
+    title: "Speaker HIMTI Leadership Training 2026",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "public-speaking",
+    period: "July 2026",
+    achievements: [
+      "Delivered a session on personal branding and leadership to incoming HIMTI members, drawing on experience leading 5+ technical projects and a 500+ participant regional organization."
+    ]
+  },
+  {
+    title: "Master of Ceremonies Computer Science Festival 2026",
+    organization: "BINUS University",
+    category: "public-speaking",
+    period: "Sept 2026",
+    achievements: [
+      "Engaged and managed a diverse audience of hundreds, ranging from university students and faculty members to 50+ competition participants and high school students on campus tours.", 
+      "Maintained high crowd control and event momentum in a highly dynamic, open-space environment, successfully driving foot traffic to student innovation booths through impactful public announcements." 
+    ]
+  },
+  {
+    title: "Games Master of Ceremonies",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "public-speaking",
+    period: "Sept 2025",
+    achievements: [
+      "Hosted and led interactive ice-breaking sessions for 350+ hybrid participants (onsite and online), driving high audience engagement and energy."
+    ]
+  },
+  {
+    title: "Master of Ceremonies HIMTI Activist Training 2025",
+    organization: "Himpunan Mahasiswa Teknik Informatika, BINUS University",
+    category: "public-speaking",
+    period: "Sept 2025",
+    achievements: [
+      "Successfully prepared activities for 6 regions and 300+ participants.",
+      "Lead onsite event for HIMTI Activist with 50+ participants."
+    ]
+  }
+];
+---
+
+<div id="experience" class="tab-content">
+  <div class="exp-header-section">
+    <h2 class="section-title">Organization Experience</h2>
+
+    <div class="filter-container" id="org-filters">
+      <button class="filter-btn active" data-filter="all">All Experiences</button>
+      <button class="filter-btn" data-filter="leadership">Leadership</button>
+      <button class="filter-btn" data-filter="public-speaking">Public Speaking</button>
+    </div>
+  </div>
+
+  <div class="exp-scroll-area">
+    <div class="cards-grid">
+      {experiences.map((exp) => (
+        <div class="card exp-card" data-category={exp.category}>
+          <div class="exp-card-header">
+            <div>
+              <h3 class="exp-title">{exp.title}</h3>
+              <span class="exp-org">{exp.organization}</span>
+            </div>
+            <span class="exp-period">{exp.period}</span>
+          </div>
+
+          <!-- Loop Poin Achievements / Bullets -->
+          {exp.achievements && exp.achievements.length > 0 && (
+            <ul class="exp-bullets">
+              {exp.achievements.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .exp-header-section {
+    margin-bottom: 1rem;
+  }
+
+  .filter-container {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 0.45rem 1.1rem;
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+
+  .exp-scroll-area {
+    max-height: 430px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .exp-scroll-area::-webkit-scrollbar {
+    width: 6px;
+  }
+  .exp-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .exp-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .exp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .exp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .exp-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .exp-org {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .exp-period {
+    font-size: 0.82rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .exp-bullets {
+    list-style-type: disc;
+    margin-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .exp-card {
+      padding: 1rem !important;
+    }
+
+   .exp-card-header {
+      flex-direction: column !important;
+      gap: 0.2rem !important;
+    }
+
+    .exp-period {
+      font-size: 0.7rem !important;
+    }
+  }
+
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const orgFilterBtns = document.querySelectorAll('#org-filters .filter-btn');
+    const expCards = document.querySelectorAll('.exp-card');
+
+    orgFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        orgFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        expCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || filterValue === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

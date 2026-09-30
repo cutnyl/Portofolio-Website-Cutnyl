@@ -1,0 +1,197 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  </head>
+  <body>
+    <div class="bg-overlay"></div>
+    <main class="main-container">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg-dark: #afb2b6;                 
+    --glass-bg: rgba(255, 255, 255, 0.55); 
+    --glass-border: rgba(255, 255, 255, 0.8);    
+    --glass-card: rgba(255, 255, 255, 0.7);
+    --text-primary: #0f172a;            
+    --text-secondary: #373c43;          
+    --accent-color: #2563eb;            
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(59, 130, 246, 0.15) 0%, transparent 40%;
+    z-index: -1;
+  }
+
+  .main-container {
+    width: 100%;
+    max-width: 1150px; 
+    min-height: 620px; 
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  }
+  
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(250, 248, 248, 0.3);
+    padding: 0.4rem;
+    border-radius: 99px;
+    border: 1px solid var(--glass-border);
+    max-width: max-content;
+    margin: 0 auto 2.5rem auto;
+    margin-top: -1rem;
+  }
+
+  .nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.6rem 1.4rem;
+    border-radius: 99px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-btn.active, .nav-btn:hover {
+    background: rgba(60, 56, 56, 0.15);
+    color: var(--text-primary);
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out forwards;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .nav-tabs {
+      overflow-x: auto;
+      max-width: 100%;
+      padding: 0.25rem;
+      gap: 0.2rem;
+    }
+    
+    .nav-tabs::-webkit-scrollbar {
+      display: none; /* Sembunyikan scrollbar HP */
+    }
+
+    .nav-btn {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-desc {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: var(--glass-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 1.25rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+</style>

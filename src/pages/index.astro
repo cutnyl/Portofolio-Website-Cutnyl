@@ -1,0 +1,733 @@
+---
+import Layout from '../layouts/layout.astro';
+import ProjectsSection from '../components/project.astro';
+import ExperienceSection from '../components/experience.astro';
+---
+
+<Layout title="Cut Nayla - Portfolio">  
+  <nav class="nav-tabs">
+    <button class="nav-btn active" data-tab="home">Home</button>
+    <button class="nav-btn" data-tab="overview">Overview</button>
+    <button class="nav-btn" data-tab="projects">Projects</button>
+    <button class="nav-btn" data-tab="experience">Organization</button>
+    <button class="nav-btn" data-tab="contact">Contact</button>
+  </nav>
+
+  <!-- Home -->
+  <div id="home" class="tab-content active">
+    <div class="hero-layout">
+      <div class="hero-text">
+        <span class="greeting">Hi, it's</span>
+        <h1 class="hero-name">Cut Nayla Maulida Naswandi</h1>
+        <p class="hero-bio">
+          An inspiring AI/ML Engineer with hands-on experience in building intelligent chatbots and conversational AI, I am passionate about developing scalable machine learning models and end-to-end AI applications.
+        </p>
+        
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="switchTab('overview')">Go To Overview &rarr;</button>
+          
+          <a href="/Resume - Cut Nayla.pdf" download class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-avatar">
+        <div class="avatar-card">
+          <img src="public/foto.png" alt="Cut Nayla" class="avatar-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- overview -->
+  <div id="overview" class="tab-content">
+    <div class="overview-grid">
+      
+      <div class="overview-left">
+        <div class="overview-section">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-desc">
+            My journey in tech spans AI and Full-Stack Web Development, where I build machine learning models, intelligent agents, and robust web applications. I bridge AI capabilities with seamless web solutions to create end-to-end digital products.            <br/>
+          </p>
+        </div>
+        
+        <div class="skills-section">
+          <h3 class="skills-title">Skills</h3>
+          
+          <div class="skill-group">
+            <strong class="skill-label">Programming Language :</strong>
+            <p class="skill-value">C, Python, MySQL, JavaScript, HTML, CSS, Java</p>
+          </div>
+
+          <div class="skill-group">
+            <strong class="skill-label">Language :</strong>
+            <p class="skill-value">Indonesia (Native) • English (Proficient)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card detail-card">
+        <h3>Education</h3>
+        <div class="edu-container">
+          <div class="edu-item">
+            <div class="edu-header">
+              <div>
+                <strong class="edu-title">BINUS University</strong>
+                <span class="edu-subtitle">Bachelor of Computer Science - Software Engineering</span>
+              </div>
+              <span class="edu-year">Sept 2024 - Present</span>
+            </div>
+            <ul class="edu-bullets">
+              <li>Cumulative GPA : 3.65 / 4.00</li>
+              <li>Freshman Leader & Freshman Partner — Assisted 20+ new students in adapting to campus life</li>
+              <li>President of HIMTI Bekasi 2026/2027</li>
+            </ul>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <div>
+                <strong class="edu-title">SMA Islam PB Soedirman</strong>
+                <span class="edu-subtitle">High School Diploma | Science Major</span>
+              </div>
+              <span class="edu-year">Sept 2022 - Jun 2024</span>
+            </div>
+            <ul class="edu-bullets">
+              <li>Acceleration Class</li>
+              <li>1st Runner-Up GEBYAR MATEMATIKA 2023 held by Indraprasta University (National)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <ProjectsSection />
+
+  <!-- ORGANIZATION -->
+  <ExperienceSection />
+
+  <!-- contact -->
+  <div id="contact" class="tab-content">
+    <div class="contact-container">
+    <div class="contact-grid">
+
+      <!-- LEFT -->
+      <div class="contact-left">
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p class="section-desc">
+          I'm actively seeking opportunities in AI/ML Engineering, Chatbot Development, and Full-Stack Web Development. Whether you have a position available, want to discuss a project, or just want to connect, I'd love to hear from you!
+        </p>
+
+        <div class="contact-list">
+
+          <!-- Email -->
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <a href="mailto:cutnaylam@gmail.com" class="contact-value">
+                cutnaylam@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+
+            <div class="contact-details">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Jakarta, Indonesia</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="contact-right">
+        <h3 class="follow-title">Follow Me</h3>
+        <div class="social-cards">
+
+          <!-- GitHub -->
+          <a href="https://github.com/cutnyl" target="_blank" class="social-card">
+            <div class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+            </div>
+
+            <div class="social-info">
+              <strong class="social-platform">GitHub</strong>
+              <span class="social-handle">@cutnyl</span>
+            </div>
+          </a>
+
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/cutnayla" target="_blank" class="social-card">
+            <div class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+
+            <div class="social-info">
+              <strong class="social-platform">LinkedIn</strong>
+              <span class="social-handle">
+                Cut Nayla Maulida Naswandi
+              </span>
+            </div>
+          </a>
+
+
+          <a href="/Resume - Cut Nayla.pdf" download class="social-card">
+            <div class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <span class="social-handle">
+              Download Resume
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</Layout>
+
+<style>
+  /* Home */
+  .hero-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3 rem;
+  }
+
+  .hero-text {
+    flex: 2;
+    max-width: 580px;
+  }
+
+  .greeting {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .hero-name {
+    font-size: 2.9rem;
+    font-weight: 700;
+    margin: 0.3rem 0 1.2rem 0;
+    line-height: 1.15;
+    color: #000000;
+  }
+
+  .hero-bio {
+    color: var(--text-secondary);
+    line-height: 2;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--glass-border);
+    color: #373c43;
+    padding: 0.7rem 1.4rem;
+    border-radius: 99px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background: rgba(16, 16, 16, 0.22);
+    border-color: rgba(240, 234, 234, 0.4);
+    transform: translateY(-2px);
+    color:#ffffff
+  }
+
+  .hero-avatar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar-card {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center 20%; 
+    transform: scale(1.15); 
+  }
+
+  @media (max-width: 768px) {
+    .hero-layout {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+
+  /* Overview  */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .overview-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+  }
+
+  .skills-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: -2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .skill-value {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+
+  .info-list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .info-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .info-list strong {
+    color: #fff;
+  }
+
+  .btn-download {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0.75rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .social-btn {
+    color: var(--text-primary);
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    transition: background 0.2s ease;
+  }
+
+  .social-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .edu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .edu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .edu-title {
+    font-size: 1.05rem;
+    color: #2c2c2c;
+    display: block;
+  }
+
+  .edu-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .edu-year {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .edu-bullets {
+    list-style-type: disc;
+    margin-left: 1.2rem;
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .edu-bullets li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Contact Layout */ 
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-left {
+    min-width: 0;
+  }
+
+  .contact-right {
+    padding-top: 0.3rem;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .contact-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .contact-value:hover {
+    color: var(--accent-color);
+  }
+
+  .follow-title {
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
+    color: #111827;
+  }
+
+  .social-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--glass-border);
+    padding: 1.1rem 1.3rem;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .social-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .social-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .social-platform {
+    font-size: 1rem;
+    color: #111827;
+  }
+
+  .social-handle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .section-desc{
+    color: var(--text-secondary);
+    line-height: 2;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1.25rem 1rem !important; 
+    border-radius: 20px !important;
+    min-height: auto !important;
+  }
+
+  .nav-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-tabs {
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important; 
+    padding: 0.3rem !important;
+    border-radius: 12px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-tabs::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .nav-btn {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0; 
+  }
+
+  .hero-name {
+    font-size: 1.85rem !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .avatar-card{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  
+
+  .filter-container {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 0.3rem;
+  }
+
+  .filter-btn {
+    padding: 0.35rem 0.85rem !important;
+    font-size: 0.78rem !important;
+    flex-shrink: 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-right {
+    padding-top: 0;
+  }
+}
+
+  
+</style>
+
+<script is:inline>
+  function switchTab(tabId) {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    navButtons.forEach(btn => {
+      if (btn.getAttribute('data-tab') === tabId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    tabContents.forEach(content => {
+      if (content.id === tabId) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+        switchTab(tabId);
+      });
+    });
+  });
+</script>

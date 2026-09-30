@@ -1,0 +1,605 @@
+---
+const projects = [
+  {
+    id: "project-1",
+    title: "SeatUp : Train Ticket Booking with “Female Seat” Feature",
+    category: "web",
+    categoryLabel: "Web Dev",
+    role: "Team Lead & Full-Stack Developer",
+    shortDesc: "Web-based train ticket booking for female using HTML, CSS, and JavaScript with Java implemented back-end.",
+    fullDesc: "Web-Based long-distance train ticketing system that streamlines the booking process through interactive seat selection and a dedicated seating option for female passengers.",
+    image: "/public/projects_file/Seat-UP.png",
+    techStack: ["HTML", "CSS", "JavaScript", "Java"],
+    duration: "2 months",
+    achievements: [
+      "Built a responsive frontend connected to a Java backend for session authentication and live booking updates",
+      "Applied advanced software architecture standards using Template, State, Protected proxy, and Module Design Patterns to ensure code maintainability and security."
+    ],
+    github: "https://github.com/cutnyl/SeatUP",
+    demo: "#"
+  },
+  {
+    id: "project-2",
+    title: "Clash of BaNG : Interactive Troop Showcase Website",
+    category: ["web", "aiml"],
+    categoryLabel: "Web Dev, AI & ML",
+    role: "UI/UX Designer, Frontend Developer, and AI Engineer",
+    shortDesc: "Web-based gaming community that provides information about games and include chatbox to helps users finding information.",
+    fullDesc: "Web-Based gaming community that provides information and serves as a space for players to discuss. This project also developed to include an Intelligent Chatbox Agent to help users using RAG (Retrieval-Augmented Generation) architecture and Ollama.",
+    image: "/public/projects_file/ClassofBang.png",
+    techStack: ["Python", "LangChain", "OpenAI API", "HTML", "CSS", "JavaScript"],
+    duration: "2 months",
+    achievements: [
+      "Designed and built a responsive gaming community platform from Figma wireframes to production, extending scope beyond the original assignment.",
+      "Developed an AI-powered chatbot in Python, using custom game documentation as its knowledge source, to help users find game-related info.",
+      "Implemented multi-step registration forms with client-side validation and real-time error handling."
+    ],
+    github: "https://github.com/cutnyl/Website-Project",
+    demo: "https://class-of-bang.vercel.app"
+  },
+  {
+    id: "project-3",
+    title: "Card Guard : Banking Fraud Detection (Web)",
+    category: ["app", "aiml"],
+    categoryLabel: "App Dev, AI & ML",
+    role: "Project Lead & Machine Learning Developer",
+    shortDesc: "Machine Learning application for detecting banking transaction fraud.",
+    fullDesc: "A modern corporate web platform built with high performance and accessibility in mind, featuring responsive layout and custom CMS integration.",
+    image: "/public/projects_file/CardGuard.png",
+    techStack: ["Python", "Scikit-Learn", "REST APIs"],
+    duration: "2 months",
+    achievements: [
+      "Improved fraud recall from 37% to 73% by applying SMOTE and switching Logistic Regression to Random Forest",
+      "Built REST API endpoints in Python to serve ML predictions to the web backend"
+    ],
+    github: "https://github.com/SoftwareEngineeringSEM4"
+  },
+  {
+    id: "project-4",
+    title: "Multimodal Rice Field Segmentation & Yield Estimation",
+    category: "aiml",
+    categoryLabel: "AI & ML",
+    role: "Project Lead & Machine Learning Lead",
+    shortDesc: "Research aimed at leveraging multimodal data to support the estimation of national rice yields.",
+    fullDesc: "This research proposed an integrated satellite, climate, and agricultural data with U-Net based paddy field segmentation and CatBoost production estimation techniques.",
+    image: "/public/projects_file/multimodal.png",
+    techStack: ["Python", "U-Net", "CatBoost", "Sentinel-1/2"],
+    duration: "4 months",
+    achievements: [
+      "Built a U-Net segmentation model achieving 78% Dice Score and 71% IoU on paddy field detection",
+      "Reduced yield prediction error by 1.70% MAE and 0.65% RMSE by integrating segmentation features into a CatBoost regression model"
+    ],
+    github: "https://github.com/SoftwareEngineeringSEM4/CardFraudProject"
+  },
+  {
+    id: "project-5",
+    title: "Cut Nayla - Portfolio",
+    category: "web",
+    categoryLabel: "Web Dev",
+    role: "Full-Stack Developer",
+    shortDesc: "A personal portfolio built using Astro and TypeScript.",
+    fullDesc: "A personal portfolio built using Astro and TypeScript.",
+    image: "/public/projects_file/porto.png",
+    techStack: ["Astro", "TypeScript"],
+    duration: "1 month",
+    achievements: [
+      "Designed and developed a responsive portfolio with modern glassmorphism aesthetics."
+    ],
+    github: "https://github.com/SoftwareEngineeringSEM4",
+    demo: "https://class-of-bang.vercel.app"
+  },
+  {
+    id: "project-6",
+    title: "Fake & True News Detection",
+    category: "aiml",
+    categoryLabel: "AI & ML",
+    role: "Machine Learning Developer",
+    shortDesc: "Comparing modeling results for the detection of fake and true news.",
+    fullDesc: "Comparing modeling results for fake and true news detection, with the ability to perform direct data inference in Google Colab.",
+    image: "/public/projects_file/news.png",
+    techStack: ["Python", "Scikit-learn", "Naive Bayes", "Logistic Regression"],
+    duration: "2 months",
+    achievements: [
+      "Built a text classification model to distinguish between fake and authentic news stories using Logistic Regression and Naive Bayes.",
+      "Developed an interactive manual inference feature within Google Colab, allowing users to test and validate custom news text in real-time" 
+    ],
+    github: "https://github.com/cutnyl/Fake-News-Detection"
+  }
+];
+---
+
+<div id="projects" class="tab-content">
+  <div class="projects-header">
+    <h2 class="section-title">Projects</h2>
+    
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="aiml">AI & ML</button>
+      <button class="filter-btn" data-filter="web">WEB DEV</button>
+      <button class="filter-btn" data-filter="app">APP DEV</button>
+    </div>
+  </div>
+
+  <div class="projects-scroll-area">
+    <div class="projects-grid">
+      {projects.map((item) => {
+        const categoryString = Array.isArray(item.category) ? item.category.join(" ") : item.category;
+
+        return (
+          <div class="project-card" data-category={categoryString}>
+            <div class="card-image-wrapper">
+              <img src={item.image} alt={item.title} class="card-img" />
+              <span class="category-tag">{item.categoryLabel}</span>
+            </div>
+            <div class="card-content">
+              <h3 class="project-title">{item.title}</h3>
+              <span class="project-role">{item.role}</span>
+              <p class="project-desc">{item.shortDesc}</p>
+              
+              <button class="btn-detail" type="button" data-project={JSON.stringify(item)}>
+                View Details &rarr;
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Modal Pop-up -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">&times;</button>
+
+      <div class="modal-body-scroll">
+        <h2 id="modal-title" class="modal-title">Project Title</h2>
+        <img id="modal-img" src="" alt="Project Preview" class="modal-banner" />
+
+        <div class="modal-body-grid">
+          <div class="modal-left">
+            <h4 class="modal-section-heading">Project Overview</h4>
+            <p id="modal-desc" class="modal-text"></p>
+
+            <h4 class="modal-section-heading" style="margin-top: 1rem;">Duration</h4>
+            <p id="modal-duration" class="modal-text"></p>
+
+            <h4 class="modal-section-heading" style="margin-top: 1rem;">Key Achievements</h4>
+            <ul id="modal-achievements" class="modal-bullets"></ul>
+          </div>
+
+          <div class="modal-right">
+            <h4 class="modal-section-heading">Tools Used</h4>
+            <div id="modal-tech" class="tech-tags-wrapper"></div>
+
+            <div class="modal-action-btns">
+              <a id="modal-demo" href="#" target="_blank" rel="noopener" class="btn-primary-sm">Live Demo ↗</a>
+              <a id="modal-github" href="#" target="_blank" rel="noopener" class="btn-secondary-sm">View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .projects-header {
+    margin-bottom: 1rem;
+  }
+
+  .filter-container {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 0.45rem 1.1rem;
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+
+  .projects-scroll-area {
+    max-height: 430px; 
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .projects-scroll-area::-webkit-scrollbar {
+    width: 6px;
+  }
+  .projects-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 99px;
+    backdrop-filter: blur(4px);
+  }
+
+  .card-content {
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+  }
+
+  .project-role {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.45;
+    margin-bottom: 1.2rem;
+    flex: 1;
+  }
+
+  .btn-detail {
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #0f172a;
+    padding: 0.55rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-detail:hover {
+    background: #0f172a;
+    color: #ffffff;
+  }
+
+  .modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(97, 97, 97, 0.78);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85dvh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: modalSlide 0.25s ease-out;
+}
+
+.modal-body-scroll {
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+  @keyframes modalSlide {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .modal-body-scroll {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .modal-body-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  .modal-body-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 10;
+  }
+
+  .modal-close:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    padding-right: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .modal-banner {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 1rem 0;
+  }
+
+  .modal-body-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .modal-section-heading {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.3rem;
+  }
+
+  .modal-text {
+    font-size: 0.83rem;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .modal-bullets {
+    margin-left: 1.1rem;
+    font-size: 0.8rem;
+    color: #475569;
+    line-height: 1.45;
+    margin-top: 0.2rem;
+  }
+
+  .tech-tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.tech-pill) {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+  }
+
+  .modal-action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-primary-sm, .btn-secondary-sm {
+    display: block;
+    text-align: center;
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-sm {
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .btn-secondary-sm {
+    background: #e0e3e7;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-primary-sm:hover{
+    background: #f1f5f9;
+    color: #2563eb;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-secondary-sm:hover{
+    background: #494e59;
+    color: #ffffff;
+  }
+
+  @media (max-width: 640px) {
+  .modal-body-grid { grid-template-columns: 1fr; }
+  }
+
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    const $ = (id) => document.getElementById(id);
+
+    // Pindahkan modal ke body supaya position: fixed tidak kena backdrop-filter parent
+    if (modal) document.body.appendChild(modal);
+
+    // ===== FILTER =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+        projectCards.forEach((card) => {
+          const categories = card.getAttribute('data-category').split(' ');
+          card.style.display =
+            filterValue === 'all' || categories.includes(filterValue) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // ===== MODAL =====
+    function openProjectModal(btnElement) {
+      const data = JSON.parse(btnElement.getAttribute('data-project'));
+
+      $('modal-title').innerText = data.title;
+      $('modal-img').src = data.image;
+      $('modal-desc').innerText = data.fullDesc;
+      $('modal-duration').innerText = data.duration;
+
+      const achievementsContainer = $('modal-achievements');
+      achievementsContainer.innerHTML = '';
+      (data.achievements || []).forEach((item) => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        achievementsContainer.appendChild(li);
+      });
+
+      const techContainer = $('modal-tech');
+      techContainer.innerHTML = '';
+      (data.techStack || []).forEach((tech) => {
+        const span = document.createElement('span');
+        span.className = 'tech-pill';
+        span.innerText = tech;
+        techContainer.appendChild(span);
+      });
+
+      const demoBtn = $('modal-demo');
+      if (data.demo && data.demo.trim() !== '' && data.demo !== '#') {
+        demoBtn.href = data.demo;
+        demoBtn.style.display = 'block';
+      } else {
+        demoBtn.style.display = 'none';
+      }
+
+      const githubBtn = $('modal-github');
+      if (data.github) {
+        githubBtn.href = data.github;
+        githubBtn.style.display = 'block';
+      } else {
+        githubBtn.style.display = 'none';
+      }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.modal-body-scroll').scrollTop = 0;
+    }
+
+    function closeProjectModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Buka modal (event delegation)
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-detail');
+      if (btn) openProjectModal(btn);
+    });
+
+    // Tutup: klik X, klik overlay, atau tekan Esc
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.closest('[data-close-modal]')) {
+        closeProjectModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeProjectModal();
+    });
+  });
+</script>
